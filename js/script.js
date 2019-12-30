@@ -1,33 +1,37 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
+var quotes = [
+  { quote: "The revolution is not an apple that falls when it is ripe. You have to make it fall.", 
+    source: "Pawan Kalyan." },
+  { quote: "Great spirits have always encountered violent opposition from mediocre minds.",
+    source: "Albert Einstein."},
+  { quote: "When something is important enough, you do it even if the odds are not in your favor.",
+    source: "Elon Musk."},
+  { quote: "The ones who are carzy enough to think that they can change the world are the ones who do.",
+    source: "Steve Jobs."},
+  { quote: "Intelligence is the ability to adapt to change.",
+    source: "Stephen Hawking."},
+  { quote: "Happiness is the when what you think, what you say and what you do are in harmony.",
+    source: "Mahatma Gandhi."},
+  { quote: "If you wanna make the world a better place, take a look at yourself, then make that change.",
+    source: "Michael Jackson."},
+  { quote: "You cant gain something, without giving something in return.",
+    source: "Hiromu Arakawa."},
+  { quote: "Power comes in response to a need, not a desire. You have to create that need.",
+    source: "Goku."},
+  { quote: "When you see only problems, you’re not seeing clearly.",
+    source: "Phil Knight."}
+];
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+function getRandomQuote() {
+  var randomNum = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNum];
+}
 
-/*** 
- * `quotes` array 
-***/
-
-
-
-/***
- * `getRandomQuote` function
-***/
-
-
-
-/***
- * `printQuote` function
-***/
-
-
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
+function printQuote() {
+  var myQuote = getRandomQuote();
+  var string = '';
+  string = '<p class="quote">' + myQuote.quote + '</p>';
+  string += '<p class="source">' + myQuote.source + '</p>';
+  document.getElementById("quote-box").innerHTML = string;
+}
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
