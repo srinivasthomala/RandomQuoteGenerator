@@ -1,3 +1,4 @@
+//An array that holds all the quotes as objects which can be displayed on the website 
 var quotes = [
   { quote: "The revolution is not an apple that falls when it is ripe. You have to make it fall.", 
     source: "Pawan Kalyan." },
@@ -21,11 +22,17 @@ var quotes = [
     source: "Phil Knight."}
 ];
 
+//This function selects a random quote from the quotes array.
 function getRandomQuote() {
   var randomNum = Math.floor(Math.random() * quotes.length);
   return quotes[randomNum];
 }
 
+/* 
+This function uses the random quote returned by the getRandomQuote function and
+concatenates the objects properties into html format and assigns innerhTML of
+the quote-box id to this concatenated string. This makes the HTML to display a random quote.
+ */
 function printQuote() {
   var myQuote = getRandomQuote();
   var string = '';
@@ -34,4 +41,8 @@ function printQuote() {
   document.getElementById("quote-box").innerHTML = string;
 }
 
+/*
+This event listener triggers the printQuote() function upon clicking on the
+show another quote button 
+*/
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
